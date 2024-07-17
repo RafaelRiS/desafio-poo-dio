@@ -4,6 +4,8 @@ import br.com.dio.dominio.Dev;
 import br.com.dio.dominio.Mentoria;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +23,10 @@ public class Main {
         mentoria.setTitulo("mentoria de js");
         mentoria.setDescricao("descricao mentoria java");
         mentoria.setData(LocalDate.now());
+
+        LocalTime horaAtual = LocalTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String horaDaConsulta = horaAtual.format(formatter);
 
         /*System.out.println(curso1);
         System.out.println(curso2);
@@ -62,5 +68,6 @@ public class Main {
         System.out.println("Conteúdos Concluidos Denis:" + devDenis.getConteudosConcluidos());
         System.out.println("Conteúdos Inscritos Denis:" + devDenis.getConteudosInscritos());
         System.out.println("XP:" + devDenis.calcularTotalXp());
+        System.out.println("\nHora da consulta: " + horaDaConsulta);
     }
 }
